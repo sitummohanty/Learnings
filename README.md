@@ -10,4 +10,6 @@ Related Java Syntax used:
    for ( int val : nums )
       {
       }
+5. int max = Integer.MIN_VALUE;   
+6. int min = Integer.MAX_VALUE;     
    
