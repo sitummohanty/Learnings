@@ -1,0 +1,54 @@
+import java.util.*;
+public class Solution{
+    void getPlusOne(ArrayList<Integer> A)
+    {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        int carry = 1;
+        
+        // Fetch elements from the end.
+        for (int i = A.size() - 1; i >= 0; i--)
+        {
+            int sum = A.get(i) + carry;
+            int digit = sum % 10;
+            carry = sum / 10;
+            list.add(digit);
+        }
+
+        // Add extra carry to list, if any
+        if (carry == 1)
+        {
+            list.add(carry);
+        }
+
+        // remove 0s from last, if any
+        int ind = list.size() - 1;
+        while (list.get(ind) == 0)
+        {
+            list.remove(ind);
+            ind--;
+        }
+
+        // Reverse the list again
+        ArrayList<Integer> result = new ArrayList<>();
+        for (int i = list.size() - 1; i >= 0; i--)
+        {
+            result.add(list.get(i));
+        }
+        System.out.println(result);
+    }
+}
+
+
+import java.util.ArrayList;
+public class Main
+{
+    public static void main(String[] args)
+    {
+     ArrayList<Integer> arr = new ArrayList<>();
+     arr.add(1);
+     arr.add(2);
+     arr.add(3);
+     Solution p = new Solution();
+     p.getPlusOne(arr);
+    }
+}
